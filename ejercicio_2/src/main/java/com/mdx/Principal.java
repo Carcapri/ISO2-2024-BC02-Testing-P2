@@ -1,11 +1,30 @@
 package com.mdx;
 
+import java.util.Scanner;
+
 public class Principal {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        Cliente cliente = new Cliente(17, true, false, true);
+        System.out.print("Ingrese la edad del cliente: ");
+        int edad = scanner.nextInt();
+
+        System.out.print("¿El cliente es estudiante? (true/false): ");
+        boolean estudiante = scanner.nextBoolean();
+
+        System.out.print("¿El cliente es trabajador? (true/false): ");
+        boolean trabajador = scanner.nextBoolean();
+
+        System.out.print("¿El cliente vive con sus padres? (true/false): ");
+        boolean viveConPadres = scanner.nextBoolean();
+
+        Cliente cliente = new Cliente(edad, estudiante, trabajador, viveConPadres);
 
         tipoCuenta(cliente);
+
+        System.out.println("El tipo de cuenta asignado es: " + cliente.getTipoCuenta());
+
+        scanner.close();
     }
 
     static void tipoCuenta(Cliente cliente) {
