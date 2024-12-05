@@ -1,8 +1,14 @@
 package com.mdx;
 
-public class Banco {
+public class Principal {
+    public static void main(String[] args) {
 
-    public void tipoCuenta(Cliente cliente) {
+        Cliente cliente = new Cliente(17, true, false, true);
+
+        tipoCuenta(cliente);
+    }
+
+    static void tipoCuenta(Cliente cliente) {
         if (cliente.getEdad() < 18 && cliente.esEstudiante() && cliente.esViveConPadres()) {
             cliente.setTipoCuenta("Cuenta Comfort");
         }
@@ -19,6 +25,6 @@ public class Banco {
         }
         if (cliente.getEdad() > 25 && cliente.esTrabajador() && !cliente.esViveConPadres()) {
             cliente.setTipoCuenta("Cuenta Bienvenido a la Vida Adulta");
-           }
-    }
+        }
+    }
 }

@@ -53,5 +53,5 @@ public class Cliente {
 
     public void setTipoCuenta(String tipoCuenta) {
         this.tipoCuenta = tipoCuenta;
-
+    }
 }
